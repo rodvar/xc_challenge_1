@@ -1,6 +1,6 @@
 var path = require('path')
 var funcs = require('./funcs')
-var encodeName = funcs.encodName
+var encodeName = funcs.encodeName
 
 var session = {
   username: process.argv[2],
@@ -17,7 +17,7 @@ var dbFile = path.join(__dirname, 'db', 'index.json')
 funcs.loadDb(dbFile, function (err, db) {
 
   // 2. encode the name
-  var encoded = encodeName(session.usrename)
+  var encoded = encodeName(session.username)
 
   // 3. find the user's inbox
   var inbox = funcs.findInbox(db, encoded)
